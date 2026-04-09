@@ -1,283 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 8.1.1"></head>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yansong's Blog</title>
+  <meta name="description" content="Yansong's personal blog">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
+  <div class="container">
+    <header class="site-header">
+      <h1 class="site-title"><a href="/">Yansong's Blog</a></h1>
+      <nav class="site-nav">
+        <a class="active" href="/">Home</a>
+        <a href="/blog">Blog</a>
       </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
+    </header>
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-my-first-post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/07/my-first-post/" class="article-date">
-  <time class="dt-published" datetime="2026-04-07T14:39:53.000Z" itemprop="datePublished">2026-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/07/my-first-post/">自动驾驶Planning就是个坑</a>
-    </h1>
-  
+    <p class="bio">
+      <!-- TODO: 一句话简介 -->
+    </p>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>从了解到进入Planning也有两三个年头了，从Rule-based到E2E，再到现在的VLA &amp; WM，每次技术迭代总得把Planning的原班人马吊锤一顿，要么转技术栈要么被边缘化，为啥同为算法工程师，Planning不是被cv锤就是被llm锤，一点尊严都没有？我认为可以从Benchmark——评价指标来解释这个现象。</p>
-<p>回看过去三年，比起 CV 领域盖楼式的线性增长，或者 LLM 的sclaing law，Planning 的发展更像是在“摊大饼”——饼摊不动了，就换个锅重新和面。我们的研发路径极其非线性，甚至带着一种路径依赖的自卑：<strong>我们似乎永远在被动跟随，从未定义主权。</strong></p>
-<h3 id="迷失的Benchmark"><a href="#迷失的Benchmark" class="headerlink" title="迷失的Benchmark"></a>迷失的Benchmark</h3><p>核心原因在于，我们至今都没有一把让所有人信服的Benchmark，举个例子，在 CV 领域，猫就是猫，分类精度高了 1% 就是实打实的进步。LLM 领域能在OR里把各维度指标都刷到T0水准，想不牛逼都难。但在Planning领域，无论开环榜单还是闭环榜单，不存在一个公认的天梯榜，因为Planning是一个很主观的东西，轨迹好坏一人有一套标准。</p>
-<blockquote>
-<p>当一个领域没有客观的度量衡时，所有的技术迭代都会变成一场文字游戏。</p>
-</blockquote>
-<h3 id="“寄生式创新”"><a href="#“寄生式创新”" class="headerlink" title="“寄生式创新”"></a>“寄生式创新”</h3><p>缺乏客观标尺，直接导致了规控领域一种奇特的<strong>寄生式创新</strong>：</p>
-<ul>
-<li>CV 证明了模型能力强，我们就做E2E。</li>
-<li>LLM 证明了 Transformer 强，我们就做VLA；</li>
-<li>视频生成模型证明了 Diffusion 强，我们开始做World Model</li>
-</ul>
-<p>我们总是在用处理“信息”的方法，去强行套壳处理“物质”的问题。每一次 fancy 的技术范式革命，都伴随着对前代方法的推倒重来，而不是在基础逻辑上的累加。我们似乎不是在研究“驾驶”本身，而是在研究**“如何把驾驶包装成别的领域已经解决的问题”**。</p>
-<h3 id="长链路导致Planning就是个糊涂账"><a href="#长链路导致Planning就是个糊涂账" class="headerlink" title="长链路导致Planning就是个糊涂账"></a>长链路导致Planning就是个糊涂账</h3><p>这种长链路的降维套壳，带来的最恶劣后果就是工程上的“糊涂账”。</p>
-<p>当一个系统在路口表现出色，写规则的、做 VLA 的、搞 MPC 的都能宣称是自己的功劳。一旦在复杂的交互场景中出事，链路上的每个环节又都有完美的借口：上游可以指责感知对边界捕捉的延迟，下游可以抱怨规控策略过于保守。</p>
-<p>当工程师拿不出可量化的硬指标时，就只能讲故事来寻求共识，举个例子，24年说要搞端到端，理由是“更拟人”，现在搞VLA，理由是“小狗小孩”，“漆黑雨夜”，一听挺合理，但这些感性的故事根本没有评价尺度，到底做出来没有？没人能回答。</p>
-<h3 id="如何解决这个问题？"><a href="#如何解决这个问题？" class="headerlink" title="如何解决这个问题？"></a>如何解决这个问题？</h3><p>我认为个人能力还没到可以颠覆一个行业的程度，最好的做法就是快跑，由于Planning评价指标带有强烈的主观性，没人能证明自己的算法能够work，一个没有solid进展全是工程优化的领域迟早得被更硬核的领域吊锤。</p>
-<p>上面讲了这么多暴论，除了理性之外还有一些是宣泄情绪，每次行业讲个新故事就得被迫转技术栈，实在是绷不住了。那么平心而论，我认为world model(只做状态预测)是一个更容易监督、有更明确Benchmark、有着更promising立意的领域。</p>
+    <div class="timeline">
+      <ul class="timeline-list">
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/07/my-first-post/" data-id="cuidK32g3qF92KtowVjOhxwz5" data-title="自动驾驶Planning就是个坑" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Planning/" rel="tag">Planning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%9B%E7%A0%96%E5%BC%95%E7%8E%89/" rel="tag">抛砖引玉</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9A%B4%E8%AE%BA/" rel="tag">暴论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/" rel="tag">自动驾驶</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E8%A7%82%E5%AF%9F/" rel="tag">行业观察</a></li></ul>
+        <li>
+          <a class="timeline-item" href="/posts/planning-is-a-trap.html">
+            <div class="timeline-item-header">
+              <span class="timeline-item-title">自动驾驶Planning就是个坑</span>
+              <span class="timeline-item-date">April 7, 2026</span>
+            </div>
+            <div class="timeline-item-summary">从了解到进入Planning也有两三个年头了，每次技术迭代总得把Planning的原班人马吊锤一顿，我认为可以从Benchmark——评价指标来解释这个现象。</div>
+            <div class="timeline-item-tags">
+              <span class="tag">自动驾驶</span>
+              <span class="tag">Planning</span>
+              <span class="tag">行业观察</span>
+            </div>
+          </a>
+        </li>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/07/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2026-04-07T14:10:08.458Z" itemprop="datePublished">2026-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/07/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/07/hello-world/" data-id="cuid8k7A3LHRQAeA9aiw_oVha" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Planning/" rel="tag">Planning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%9B%E7%A0%96%E5%BC%95%E7%8E%89/" rel="tag">抛砖引玉</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%B4%E8%AE%BA/" rel="tag">暴论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/" rel="tag">自动驾驶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E8%A7%82%E5%AF%9F/" rel="tag">行业观察</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Planning/" style="font-size: 10px;">Planning</a> <a href="/tags/%E6%8A%9B%E7%A0%96%E5%BC%95%E7%8E%89/" style="font-size: 10px;">抛砖引玉</a> <a href="/tags/%E6%9A%B4%E8%AE%BA/" style="font-size: 10px;">暴论</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/" style="font-size: 10px;">自动驾驶</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E8%A7%82%E5%AF%9F/" style="font-size: 10px;">行业观察</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2026/04/07/my-first-post/">自动驾驶Planning就是个坑</a>
-          </li>
-        
-          <li>
-            <a href="/2026/04/07/hello-world/">Hello World</a>
-          </li>
-        
       </ul>
     </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
+    <footer class="site-footer">
+      &copy; 2026 Yansong
+    </footer>
   </div>
 </body>
 </html>
