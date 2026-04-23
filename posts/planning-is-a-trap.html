@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>自动驾驶Planning就是个坑 - Yansong's Blog</title>
-  <meta name="description" content="从了解到进入Planning也有两三个年头了，每次技术迭代总得把Planning的原班人马吊锤一顿，我认为可以从Benchmark——评价指标来解释这个现象。">
+  <title>从系统的角度看Autonomous Planning - Yansong's Blog</title>
+  <meta name="description" content="对自动驾驶规划问题，每次技术迭代对原来的技术人员都是生死存亡的挑战。本文从系统性的角度分析造成这一困境的原因。">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -13,7 +13,6 @@
       <h1 class="site-title"><a href="/">Yansong's Blog</a></h1>
       <nav class="site-nav">
         <a href="/">Home</a>
-        <a class="active" href="/blog">Blog</a>
       </nav>
     </header>
 
@@ -21,19 +20,19 @@
 
     <article class="article">
       <header class="article-header">
-        <h1 class="article-title">自动驾驶Planning就是个坑</h1>
+        <h1 class="article-title">从系统的角度看Autonomous Planning</h1>
         <div class="article-meta">
           <span>April 7, 2026</span>
-          <span>自动驾驶 / Planning / 行业观察</span>
+          <span>自动驾驶 / Planning / 吐槽</span>
         </div>
       </header>
 
       <div class="article-content">
-        <p>从了解到进入Planning也有两三个年头了，从Rule-based到E2E，再到现在的VLA &amp; WM，每次技术迭代总得把Planning的原班人马吊锤一顿，要么转技术栈要么被边缘化，为啥同为算法工程师，Planning不是被cv锤就是被llm锤，一点尊严都没有？我认为可以从Benchmark——评价指标来解释这个现象。</p>
+        <p>回顾过去五年自动驾驶Planning演进的方向，从Rule-based到E2E，再到现在的VLA &amp; WM，每次技术迭代总得把Planning的原班人马吊锤一顿，要么转技术栈要么被边缘化，为啥同为算法工程师，Planning被cv锤，被llm锤，甚至被具身锤？我认为可以系统性的角度来看问题。</p>
 
-        <p>回看过去三年，比起 CV 领域盖楼式的线性增长，或者 LLM 的scaling law，Planning 的发展更像是在"摊大饼"——饼摊不动了，就换个锅重新和面。我们的研发路径极其非线性，甚至带着一种路径依赖的自卑：<strong>我们似乎永远在被动跟随，从未定义主权。</strong></p>
+        <p>回看过去三年，比起 CV 领域盖楼式的线性增长，或者 LLM 的scaling law，Planning 的发展更像是在"摊大饼"——饼摊不动了，就换个锅重新和面。我们的研发路径极其非线性，且极易受到其它领域的降维打击：<strong>我们似乎永远在被动跟随，从未定义主权。</strong></p>
 
-        <h3>迷失的Benchmark</h3>
+        <h3>不清晰的Benchmark</h3>
 
         <p>核心原因在于，我们至今都没有一把让所有人信服的Benchmark，举个例子，在 CV 领域，猫就是猫，分类精度高了 1% 就是实打实的进步。LLM 领域能在OR里把各维度指标都刷到T0水准，想不牛逼都难。但在Planning领域，无论开环榜单还是闭环榜单，不存在一个公认的天梯榜，因为Planning是一个很主观的东西，轨迹好坏一人有一套标准。</p>
 
@@ -41,7 +40,7 @@
           <p>当一个领域没有客观的度量衡时，所有的技术迭代都会变成一场文字游戏。</p>
         </blockquote>
 
-        <h3>"寄生式创新"</h3>
+        <h3>故事性的，感性的寄生式创新</h3>
 
         <p>缺乏客观标尺，直接导致了规控领域一种奇特的<strong>寄生式创新</strong>：</p>
 
@@ -53,19 +52,13 @@
 
         <p>我们总是在用处理"信息"的方法，去强行套壳处理"物质"的问题。每一次 fancy 的技术范式革命，都伴随着对前代方法的推倒重来，而不是在基础逻辑上的累加。我们似乎不是在研究"驾驶"本身，而是在研究<strong>"如何把驾驶包装成别的领域已经解决的问题"</strong>。</p>
 
-        <h3>长链路导致Planning就是个糊涂账</h3>
+        <h3>冗长的链路带来的高验证成本</h3>
 
         <p>这种长链路的降维套壳，带来的最恶劣后果就是工程上的"糊涂账"。</p>
 
         <p>当一个系统在路口表现出色，写规则的、做 VLA 的、搞 MPC 的都能宣称是自己的功劳。一旦在复杂的交互场景中出事，链路上的每个环节又都有完美的借口：上游可以指责感知对边界捕捉的延迟，下游可以抱怨规控策略过于保守。</p>
 
         <p>当工程师拿不出可量化的硬指标时，就只能讲故事来寻求共识，举个例子，24年说要搞端到端，理由是"更拟人"，现在搞VLA，理由是"小狗小孩"，"漆黑雨夜"，一听挺合理，但这些感性的故事根本没有评价尺度，到底做出来没有？没人能回答。</p>
-
-        <h3>如何解决这个问题？</h3>
-
-        <p>我认为个人能力还没到可以颠覆一个行业的程度，最好的做法就是快跑，由于Planning评价指标带有强烈的主观性，没人能证明自己的算法能够work，一个没有solid进展全是工程优化的领域迟早得被更硬核的领域吊锤。</p>
-
-        <p>上面讲了这么多暴论，除了理性之外还有一些是宣泄情绪，每次行业讲个新故事就得被迫转技术栈，实在是绷不住了。那么平心而论，我认为world model(只做状态预测)是一个更容易监督、有更明确Benchmark、有着更promising立意的领域。</p>
       </div>
     </article>
 
