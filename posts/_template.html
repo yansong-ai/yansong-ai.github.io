@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}} - Yansong's Blog</title>
+  <meta name="description" content="{{SUMMARY}}">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <h1 class="site-title"><a href="/">Yansong's Blog</a></h1>
+      <nav class="site-nav">
+        <a href="/">Home</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="/">&larr; Back</a>
+
+    <article class="article">
+      <header class="article-header">
+        <h1 class="article-title">{{TITLE}}</h1>
+        <div class="article-meta">
+          <span>{{DATE}}</span>
+          <span>{{TAGS}}</span>
+        </div>
+      </header>
+
+      <div class="article-content">
+{{CONTENT}}
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 Yansong
+    </footer>
+  </div>
+</body>
+</html>

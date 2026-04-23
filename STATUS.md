@@ -27,10 +27,15 @@
 - [x] 填入首页简介（IEEE 作者介绍风格：HIT B.Eng. + BIT M.S. + AGI/具身/自驾）
 
 ## 下一步
-1. 补更多文章（当前仅 1 篇）
+1. 用 `/new-post posts/<slug>.md` 写新文章（已建好 skill + 模板）
 2. 可选：补充简介细节（毕业年份、专业方向、当前职位）
 3. 可选：加 email / GitHub / Google Scholar 链接
-4. 考虑是否需要 Markdown → HTML 构建脚本
+4. 可选：修 `posts/planning-is-a-trap.html` 里仍存在的 `/blog` 死链
+
+## 发文工作流（skill-based）
+1. 复制 `posts/_template.md` → `posts/<slug>.md`
+2. 填 frontmatter（title/date/slug/summary/tags）+ 正文
+3. 调用 `/new-post posts/<slug>.md`，skill 自动完成 MD→HTML、首页插入、commit、push
 
 ## 阻塞项
 - 无
@@ -44,6 +49,8 @@
 | 2026-04-09 | 网站标题 Yansong's Blog，导航 Home / Blog | 用户选择 |
 | 2026-04-23 | 仓库由 Private 改为 Public | 免费账号启用 GitHub Pages 所需 |
 | 2026-04-23 | 暂时移除导航 Blog 链接（而非创建 /blog 页） | 首页已是时间轴，避免死链即可 |
+| 2026-04-23 | 首页简介保留空占位（TODO） | 用户暂不希望公开个人信息 |
+| 2026-04-23 | 新增 `/new-post` skill + posts 模板 | 用 Markdown 写，skill 负责转 HTML + 发布 |
 
 ## 环境信息
 - 代码目录: `/Users/mi/Public/workspace/yansong-ai.github.io/`
