@@ -6,10 +6,10 @@
 ---
 
 ## 最后更新时间
-2026-04-09 11:40
+2026-04-23 11:50
 
 ## 当前阶段
-**Milestone 1：首页 + 文章页实现完成**
+**Milestone 2：站点上线 GitHub Pages**
 
 ## 已完成的工作
 - [x] 初始化项目仓库（原 Hexo 生成的静态站）
@@ -21,16 +21,19 @@
 - [x] 创建首页 index.html（标题/导航/时间轴文章列表）
 - [x] 创建文章页模板并迁移「自动驾驶Planning就是个坑」
 - [x] 清理旧 Hexo 产出文件（2026/、archives/、tags/、fancybox/、js/、css/images/）
+- [x] 仓库改为 Public 并启用 GitHub Pages（Deploy from branch: main / root）
+- [x] 站点上线：https://yansong-ai.github.io/ 返回 200
+- [x] 移除导航死链 `/blog`
+- [x] 填入首页简介（IEEE 作者介绍风格：HIT B.Eng. + BIT M.S. + AGI/具身/自驾）
 
 ## 下一步
-1. 用户本地预览并确认效果，根据反馈调整样式
-2. 补充首页简介文案（用户提供后填入）
-3. 创建 /blog 页面（目前导航链接指向 /blog，页面尚未创建）
+1. 补更多文章（当前仅 1 篇）
+2. 可选：补充简介细节（毕业年份、专业方向、当前职位）
+3. 可选：加 email / GitHub / Google Scholar 链接
 4. 考虑是否需要 Markdown → HTML 构建脚本
 
 ## 阻塞项
-- 等待用户本地预览反馈
-- 等待用户提供简介文案
+- 无
 
 ## 关键决策记录
 | 时间 | 决策内容 | 原因 |
@@ -39,6 +42,8 @@
 | 2026-04-09 | 不扒站，手写复刻风格 | pi.website 是 Next.js SPA，扒下来无法直接用 |
 | 2026-04-09 | Hello World 文章不迁移 | Hexo 默认文章，无实质内容 |
 | 2026-04-09 | 网站标题 Yansong's Blog，导航 Home / Blog | 用户选择 |
+| 2026-04-23 | 仓库由 Private 改为 Public | 免费账号启用 GitHub Pages 所需 |
+| 2026-04-23 | 暂时移除导航 Blog 链接（而非创建 /blog 页） | 首页已是时间轴，避免死链即可 |
 
 ## 环境信息
 - 代码目录: `/Users/mi/Public/workspace/yansong-ai.github.io/`
