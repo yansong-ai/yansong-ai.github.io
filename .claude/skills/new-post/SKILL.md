@@ -52,6 +52,11 @@ description: Publish a Markdown draft from posts/*.md to the live blog. Converts
 | `` `code` `` | `<code>code</code>` |
 | `[text](url)` | `<a href="url">text</a>` |
 
+**数学公式（MathJax 原样透传）**:
+- `$$ ... $$` → 作为独立块直接输出，不包 `<p>`（MathJax 渲染为 display math）
+- `$ ... $` → 保留在段落文本中（MathJax 渲染为 inline math）
+- 模板 `posts/_template.html` 已加载 MathJax 3 CDN，无需额外处理
+
 **暂不支持**（遇到时提醒用户、询问处理方式）:
 - 图片 `![alt](url)`
 - 代码块 ` ``` ` 
