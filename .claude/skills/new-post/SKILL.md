@@ -1,19 +1,6 @@
 ---
 name: new-post
 description: Publish a Markdown draft from posts/*.md to the live blog. Converts MD to HTML, updates the homepage timeline, then commits and pushes. Trigger when the user types /new-post, or says "publish this draft", "发这篇", "推送新文章".
-user-invocable: true
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Bash(git add *)
-  - Bash(git commit *)
-  - Bash(git push *)
-  - Bash(git status)
-  - Bash(git diff *)
-  - Bash(curl -sI *)
-  - Bash(ls *)
 ---
 
 # /new-post — Markdown 草稿发布
