@@ -1,5 +1,5 @@
 ---
-title: AI 时代，如何避免自己被取代
+title: AI时代，关于Tech Workers定位的思考
 date: April 23, 2026
 slug: how-to-do-in-AGI-time
 summary: 雪崩来临的时候，往山脚下跑注定会被压死，正确的做法应该是往高处走。
