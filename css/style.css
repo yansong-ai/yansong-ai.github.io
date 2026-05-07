@@ -163,7 +163,7 @@ a {
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -2rem;
+  left: calc(-1.5rem - 4px);
   top: 0.75rem;
   width: 7px;
   height: 7px;
